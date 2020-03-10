@@ -6,6 +6,54 @@ import static org.junit.Assert.fail;
 
 public class TestLinkedList {
     @Test
-    public void test1() {
+    public void testAddSingleElement() {
+        LinkedList list = new LinkedList();
+        list.add(5);
+        int result = list.get(0);
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void testAddTwoElements() {
+        LinkedList list = new LinkedList();
+        list.add(5);
+        list.add(2);
+        int result = list.get(0);
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void testAddTwoElementsAndGetSecond() {
+        LinkedList list = new LinkedList();
+        list.add(5);
+        list.add(2);
+        int result = list.get(1);
+        assertEquals(2, result);
+    }
+
+    @Test
+    public void testAddSingleElementAndGetSecond() {
+        LinkedList list = new LinkedList();
+        list.add(5);
+        boolean success = false;
+        try {
+            int result = list.get(1);
+        } catch (IndexOutOfBoundsException e) {
+            success = true;
+        }
+        assertEquals(true, success);
+    }
+
+    @Test
+    public void testGetWithNegativeIndex() {
+        LinkedList list = new LinkedList();
+        list.add(5);
+        boolean success = false;
+        try {
+            int result = list.get(-1);
+        } catch (IndexOutOfBoundsException e) {
+            success = true;
+        }
+        assertEquals(true, success);
     }
 }

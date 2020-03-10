@@ -39,12 +39,27 @@ public class LinkedList {
 
     // get method
     public int get(int index) {
-        // 1. case: index == 0
-        if (index == 0) {
-            return first.elem;
-        } else { // 2. case: index > 0
-            // not yet implemented
-            return -1; // not correct!
+        // what we have:
+        // field `first` referring to the first Node object
+        // `first.next`
+        Node tmp = first;
+        int counter = 0;
+        while (counter < index && tmp.next != null) {
+            tmp = tmp.next;
+            counter++;
         }
+        // what we know: either counter < index is false
+        // or tmp.next == null (Alarm bell!)
+        if (counter == index) {
+            return tmp.elem;
+        } else {
+            // list is too short!
+            throw new IndexOutOfBoundsException();
+        }
+
+        /* NullPointerExceptions always occur:
+         * (1) null.field
+         * (2) null.method(arg1, arg2)
+         */
     }
 }
