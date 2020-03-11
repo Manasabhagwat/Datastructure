@@ -62,4 +62,15 @@ public class LinkedList {
          * (2) null.method(arg1, arg2)
          */
     }
+
+    public int size() {
+        int counter = 0;
+        Node tmp = first;
+        while (tmp != null) {
+            tmp = tmp.next;
+            counter++;
+        }
+        // at this point we know: tmp == null
+        return counter;
+    }
 }
