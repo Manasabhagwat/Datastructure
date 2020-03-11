@@ -56,4 +56,30 @@ public class TestLinkedList {
         }
         assertEquals(true, success);
     }
+
+    @Test
+    public void testSizeWithEmptyList() {
+        LinkedList list = new LinkedList();
+        int result = list.size();
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void testSizeWithSingletonList() {
+        LinkedList list = new LinkedList();
+        list.add(5);
+        int result = list.size();
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void testSizeWithNonEmptyList() {
+        LinkedList list = new LinkedList();
+        list.add(5);
+        list.add(2);
+        list.add(7);
+        list.add(12);
+        int result = list.size();
+        assertEquals(4, result);
+    }
 }
