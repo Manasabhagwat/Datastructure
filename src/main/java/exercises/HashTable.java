@@ -18,7 +18,6 @@ class Entry {
 public class HashTable {
 
     public HashTable() {
-        // initialize fields...
     }
 
     private int SIZE = 1024; // 2^10
