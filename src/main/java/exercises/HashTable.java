@@ -11,6 +11,10 @@ class Entry {
     }
 }
 
+/**
+ * This hash table implements a standard hash table with two
+ * main operations: insert and get.
+ */
 public class HashTable {
 
     public HashTable() {
