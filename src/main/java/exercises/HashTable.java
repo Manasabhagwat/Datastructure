@@ -11,10 +11,10 @@ class Entry {
     }
 }
 
+// TODO This class should be documented!
 public class HashTable {
 
     public HashTable() {
-        // initialize fields...
     }
 
     private int SIZE = 1024; // 2^10
